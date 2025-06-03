@@ -1,0 +1,27 @@
+
+
+.ordenar {
+    display: grid;
+    background-color: gray;
+    width: 100%;
+    max-width: 500px;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas:
+        "q q w w e e r r t t y y u u i i o o p p"
+        "sp1 a a s s d d f f g g h h j j k k l l sp3"
+        "sp2 sp2 sp2 z z x x c c v v b b n n m m del del del";
+}
+
+.ordenar button:nth-child(27) {
+    grid-area: del;
+}
+.ordenar span:nth-child(1) {
+    grid-area: sp1;
+}
+.ordenar span:nth-child(2) {
+    grid-area: sp2;
+}
+.ordenar span:nth-child(3) {
+    grid-area: sp3;
+}

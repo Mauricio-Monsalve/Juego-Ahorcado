@@ -1,0 +1,45 @@
+.Ahorcado {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  flex-direction: column;
+}
+
+.Personaje {
+  width: 90%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.Personaje .Foto {
+  width: 100%;
+  aspect-ratio: 1;
+  background-image: url("/images/person.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 145%;
+}
+
+.Banco {
+  position: absolute;
+  width: 40%;
+  bottom: -7%;
+  right: 20%;
+  transition: right 0.3s ease;
+}
+
+@media screen and (orientation: portrait) {
+  .Ahorcado {
+    width: 100%;
+    height: 40%;
+  }
+  .Personaje {
+    max-width: 5rem;
+  }
+}

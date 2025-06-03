@@ -1,0 +1,23 @@
+.Word {
+  list-style: none;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Word li {
+  font-size: 2rem;
+  text-align: center;
+  font-family: monospace;
+  border-bottom: .15rem solid black;
+  /* text-transform: uppercase; */
+}
+
+.upper-config {
+  text-transform: uppercase;
+}
+
+.lower-config {
+  text-transform: lowercase;
+}

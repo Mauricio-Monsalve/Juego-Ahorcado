@@ -1,5 +1,4 @@
 .WordContainer {
-  background-color: green;
   width: 60%;
   height: 100%;
   display: flex;
@@ -14,5 +13,6 @@
   .WordContainer {
     width: 100%;
     height: 60%;
+    padding: 0;
   }
 }

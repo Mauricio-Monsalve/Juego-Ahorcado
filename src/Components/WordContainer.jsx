@@ -1,11 +1,13 @@
+import { useEffect } from "react";
 import "../Styles/WordContainer.css";
 import Teclado from "./Teclado.jsx";
 import Word from "./Word.jsx";
 
-function WordContainer() {
+function WordContainer({configApp}) {
+
   return (
     <div className="WordContainer">
-      <Word/>
+      <Word configWordContainer={configApp}/>
       <Teclado/>
     </div>
   )

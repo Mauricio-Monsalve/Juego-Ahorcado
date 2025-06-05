@@ -1,0 +1,73 @@
+.Config {
+  display: flex;
+  position: fixed;
+  right: .5rem;
+  top: .5rem;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.Config img {
+  width: 2rem;
+  aspect-ratio: 1;
+  filter: invert();
+  border-radius: 50%;
+  padding: .25rem;
+  transition: transform 0.3s ease;
+}
+
+.Config .bubble {
+  width: 100%;
+  background-color: #ddd;
+  padding: .2rem .5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.Config .case-type {
+  width: 5rem;
+  display: flex;
+  position: relative;
+  height: 2.5rem;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.Config .case-type span {
+  cursor: pointer;
+}
+
+.Config .case-type ul {
+  list-style: none;
+  position: absolute;
+  right: .25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: .5rem;
+  overflow: hidden;
+  height: calc( 100% - 1rem );
+}
+.Config .case-type ul li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient( to bottom, white, #ddd );
+  border: .1rem solid #ddd;
+  border-radius: .2rem;
+  cursor: pointer;
+  padding: .1rem .2rem;
+}
+
+.Config .case-type ul li:hover {
+  color: #555;
+  background: linear-gradient( to top, white, #ddd );
+}
+
+.Config .case-type ul li.selected {
+  color: white;
+  background: linear-gradient( to bottom, gray , whitesmoke );
+}

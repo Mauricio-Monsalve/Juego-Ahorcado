@@ -11,13 +11,4 @@
   text-align: center;
   font-family: monospace;
   border-bottom: .15rem solid black;
-  /* text-transform: uppercase; */
-}
-
-.upper-config {
-  text-transform: uppercase;
-}
-
-.lower-config {
-  text-transform: lowercase;
 }

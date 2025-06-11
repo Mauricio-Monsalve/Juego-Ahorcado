@@ -3,6 +3,7 @@ import "../Styles/App.css";
 import Ahorcado from "./Ahorcado.jsx";
 import Config from "./Config.jsx";
 import WordContainer from "./WordContainer.jsx";
+import Menu from "./Menu.jsx";
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div className="App">
+      <Menu/>
       <Ahorcado/>
       <WordContainer configApp={caseConfig}/>
       <Config mensajero={setCaseConfig}/>

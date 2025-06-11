@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../Styles/Word.css";
+import { ConfigContext } from "../Contexts/ConfigContext";
 
 function Word({configWordContainer}) {
 
+  const {palabra, letras} = useContext(ConfigContext);
+
   const [juego, setJuego] = useState([]);
-  const [letras, setLetras] = useState("abcdefghijklmnopqrstuvwxyz");
-  const [palabra, setPalabra] = useState("SuperCaliFragiListico");
 
   useEffect(()=>{
     const estructura = palabra.split("").map((letra)=>{
@@ -16,7 +17,7 @@ function Word({configWordContainer}) {
     });
     setJuego(estructura);
     console.log(configWordContainer);
-  },[configWordContainer]);
+  },[configWordContainer, letras, palabra]);
 
   return (
     <ol className="Word"

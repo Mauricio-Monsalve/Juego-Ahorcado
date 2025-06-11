@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Angel wish";
+  src: url("/fonts/Angel wish.ttf");
+}
+
+@font-face {
+  font-family: Ruritania;
+  src: url("/fonts/Ruritania.ttf");
+}
+
 * {
   padding: 0;
   margin: 0;

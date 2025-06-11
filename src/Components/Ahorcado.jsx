@@ -1,20 +1,11 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "../Styles/Ahorcado.css";
+import { ConfigContext } from "../Contexts/ConfigContext.jsx";
 
 function Ahorcado() {
-  const [banco, setBanco] = useState(0);
+  
   const refBanco = useRef();
-  const refAudio = useRef();
-
-  const chairHandler = () => {
-    if(banco < 36) {
-      setBanco(banco + 4);
-    }
-    if(banco >= 32){
-      refAudio.current.currentTime = 0.7;
-      refAudio.current.play();
-    }
-  }
+  const {banco} = useContext(ConfigContext);
 
   return (
     <>
@@ -27,7 +18,6 @@ function Ahorcado() {
             src="/images/chair.png"
             alt="Banco" />
         </div>
-        <audio ref={refAudio} src="/sounds/bone.mp3"></audio>
       </div>
       {/* <button onClick={chairHandler}>Rodar {banco}</button> */}
     </>

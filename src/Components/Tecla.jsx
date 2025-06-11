@@ -1,28 +1,35 @@
 // traemos el reemplazo de id
-import { useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 // estilos
 import "../Styles/Tecla.css";
+import { ConfigContext } from "../Contexts/ConfigContext.jsx";
 
 //creamos un componente que recibe 'tecleo' y debe tener hijos
-function Tecla({children, tecleo}) {
+function Tecla({children}) {
 
+  const {letras, setLetras, palabra, chairHandler} = useContext(ConfigContext);
+
+  
   // creamos una referencia a un boton
   const refBoton = useRef();
+  
+  useEffect(()=>{
+    if(!letras) {
+      refBoton.current.removeAttribute("disabled");
+    }
+  },[letras]);
 
   // funcion que llamaremos dentro del componente
   const manejadorBoton = () => {
-    // llamamos al prop 'tecleo' y le mandamos como parametro los hijos
-    tecleo(children);
+    setLetras( letras + children )
+
+    if(!palabra.toLowerCase().includes(String(children).toLowerCase())) {
+      chairHandler();
+    }
+
     // desactivamos el boton
     refBoton.current.setAttribute("disabled",true);
   }
-
-  // const manejadorHover = () => {
-  //   refBoton.current.style.backgroundColor = "rgb(0,180,0)"
-  // }
-  // const manejadorExit = () => {
-  //   refBoton.current.style.backgroundColor = "green"
-  // }
 
   return (
     <button type="button"
@@ -32,8 +39,6 @@ function Tecla({children, tecleo}) {
       gridArea: children.toLowerCase()
     }}
     onClick={manejadorBoton}
-    // onMouseEnter={manejadorHover}
-    // onMouseLeave={manejadorExit}
     >
       {children}
     </button>

@@ -17,7 +17,7 @@
 .Menu > p {
   font-size: 3rem;
   font-family: "Angel wish";
-  text-shadow: 0 0 5px black;
+  text-shadow: 0 0 .7rem black;
   position: absolute;
   top: 0;
 }
@@ -25,7 +25,7 @@
 .Menu > p > span {
   font-size: 4rem;
   font-family: Ruritania;
-  text-shadow: 0 0 10px gold;
+  text-shadow: 0 0 .8rem gold;
 }
 
 .Menu > img[alt="Menu"] {
@@ -50,7 +50,7 @@
   padding: .5rem 1rem;
   font-size: 1.7rem;
   min-width: 10rem;
-  border: 2px solid black;
+  border: .2rem solid black;
   transition: background-color .3s ease;
 }
 
@@ -65,17 +65,21 @@
   background-color: white;
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .Menu textarea {
   padding: .1rem .8rem;
   font-size: 2rem;
   border-radius: 1rem;
-  border: 2px solid black;
+  border: .2rem solid black;
   resize: vertical;
   min-height: 3rem;
   max-height: 40vh;
+}
+
+.Menu textarea:focus {
+  outline: .1rem solid black;
 }
 
 .Menu .separador {

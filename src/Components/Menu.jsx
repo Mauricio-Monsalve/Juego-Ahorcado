@@ -1,62 +1,12 @@
-import { useContext, useReducer, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "../Styles/Menu.css";
 import { ConfigContext } from "../Contexts/ConfigContext";
 
-
-
-
-const menuViewInicial = {
-  vistaActual: 0,
-  nuevoJuego: true, //vista 0
-  nuevaFrase: false, //vista 1
-  pausa: false //vista 2
-};
-
-function menuViewHandler(estado, accion) {
-
-  const nuevoEstado = {...estado};
-
-  switch (accion) {
-    case 0:
-      nuevoEstado.vistaActual = 0;
-      nuevoEstado.nuevoJuego = true;
-      nuevoEstado.nuevaFrase = false;
-      nuevoEstado.pausa = false;
-      return nuevoEstado;
-    case 1:
-      nuevoEstado.vistaActual = 1;
-      nuevoEstado.nuevoJuego = false;
-      nuevoEstado.nuevaFrase = true;
-      nuevoEstado.pausa = false;
-      return nuevoEstado;
-    case 2:
-      nuevoEstado.vistaActual = 2;
-      nuevoEstado.nuevoJuego = false;
-      nuevoEstado.nuevaFrase = false;
-      nuevoEstado.pausa = true;
-      return nuevoEstado;
-    case 3:
-      nuevoEstado.vistaActual = 2;
-      nuevoEstado.nuevoJuego = false;
-      nuevoEstado.nuevaFrase = false;
-      nuevoEstado.pausa = true;
-      return nuevoEstado;
-    default:
-      return nuevoEstado;
-  }
-}
-
-
-
-
-
-
-
 function Menu() {
 
-  const [menuView, setMenuView] = useReducer(menuViewHandler, menuViewInicial);
+  const {menu, setMenu} = useContext(ConfigContext);
 
-  const {setPalabra, setBanco, setLetras} = useContext(ConfigContext);
+  const {setPalabra, setBanco, setLetras, menuView, setMenuView} = useContext(ConfigContext);
 
   const refFrase = useRef();
 
@@ -105,7 +55,6 @@ function Menu() {
     }
   }
 
-  const [menu, setMenu] = useState(true);
 
   return (
     <div className="Menu"

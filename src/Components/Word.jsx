@@ -4,7 +4,7 @@ import { ConfigContext } from "../Contexts/ConfigContext";
 
 function Word({configWordContainer}) {
 
-  const {palabra, letras} = useContext(ConfigContext);
+  const {palabra, letras, setLetras, setPalabra, setBanco, setMenuView, setEstado} = useContext(ConfigContext);
 
   const [juego, setJuego] = useState([]);
 
@@ -15,6 +15,9 @@ function Word({configWordContainer}) {
         conseguida: !(/[a-zA-Z]/.test(letra)) ||  letras.toLowerCase().includes(letra.toLowerCase())
       };
     });
+    if(estructura.length > 0 && estructura.every(letra => letra.conseguida)) {
+      setEstado("ganaste");
+    }
     setJuego(estructura);
     console.log(configWordContainer);
   },[configWordContainer, letras, palabra]);

@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import "../Styles/Menu.css";
 import { ConfigContext } from "../Contexts/ConfigContext";
 
@@ -66,7 +66,7 @@ function Menu() {
       }}>
 
       {menuView.pausa && !menu &&
-      <img src="/icons/menu.svg" alt="Menu" onClick={()=>setMenu(!menu)} />}
+      <img src="/Juego-Ahorcado/icons/menu.svg" alt="Menu" onClick={()=>setMenu(!menu)} />}
 
       {menu && <>
       <p>El <span>A</span>horcado</p>

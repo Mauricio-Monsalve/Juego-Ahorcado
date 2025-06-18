@@ -15,7 +15,7 @@ function Ahorcado() {
           <img ref={refBanco}
             style={{right: `calc(20% + ${banco}%)`}}
             className="Banco"
-            src="/images/chair.png"
+            src="/Juego-Ahorcado/images/chair.png"
             alt="Banco" />
         </div>
       </div>

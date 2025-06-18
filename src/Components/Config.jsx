@@ -53,7 +53,7 @@ function Config({mensajero}) {
 
   return (
     <div className="Config">
-      <img src="/icons/config.svg"
+      <img src="/Juego-Ahorcado/icons/config.svg"
         alt="Configuracion"
         onClick={() => setConfig("menu")}
         style={{ transform: `rotate(${config.menu ? "90" : "0"}deg)` }}
